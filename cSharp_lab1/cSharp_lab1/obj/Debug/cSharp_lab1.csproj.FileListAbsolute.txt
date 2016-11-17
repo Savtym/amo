@@ -1,0 +1,6 @@
+E:\Books for institute\5 семестр\amo\my\cSharp_lab1\cSharp_lab1\bin\Debug\cSharp_lab1.exe.config
+E:\Books for institute\5 семестр\amo\my\cSharp_lab1\cSharp_lab1\bin\Debug\cSharp_lab1.exe
+E:\Books for institute\5 семестр\amo\my\cSharp_lab1\cSharp_lab1\bin\Debug\cSharp_lab1.pdb
+E:\Books for institute\5 семестр\amo\my\cSharp_lab1\cSharp_lab1\obj\Debug\cSharp_lab1.csprojResolveAssemblyReference.cache
+E:\Books for institute\5 семестр\amo\my\cSharp_lab1\cSharp_lab1\obj\Debug\cSharp_lab1.exe
+E:\Books for institute\5 семестр\amo\my\cSharp_lab1\cSharp_lab1\obj\Debug\cSharp_lab1.pdb

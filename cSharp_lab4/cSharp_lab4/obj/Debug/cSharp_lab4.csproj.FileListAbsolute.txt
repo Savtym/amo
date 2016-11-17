@@ -1,0 +1,6 @@
+E:\university\5 семестр\amo\my\cSharp_lab4\cSharp_lab4\bin\Debug\cSharp_lab4.exe.config
+E:\university\5 семестр\amo\my\cSharp_lab4\cSharp_lab4\bin\Debug\cSharp_lab4.exe
+E:\university\5 семестр\amo\my\cSharp_lab4\cSharp_lab4\bin\Debug\cSharp_lab4.pdb
+E:\university\5 семестр\amo\my\cSharp_lab4\cSharp_lab4\obj\Debug\cSharp_lab4.csprojResolveAssemblyReference.cache
+E:\university\5 семестр\amo\my\cSharp_lab4\cSharp_lab4\obj\Debug\cSharp_lab4.exe
+E:\university\5 семестр\amo\my\cSharp_lab4\cSharp_lab4\obj\Debug\cSharp_lab4.pdb
