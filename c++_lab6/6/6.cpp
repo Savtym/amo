@@ -3,17 +3,16 @@
 
 using namespace std;
 
-
 #define N 50		
-#define A 2			
-#define B 8
+#define A 0				
+#define B 14
 
 typedef double matrix[N + 1][N + 2];
 typedef double vect[N + 1];
 
 double F(double x)
 {
-	return 0.5 * exp(pow(x, 1 / 3)) * sin(3 * x);
+	return x*exp(sin(x / 1.5)) - 20;
 }
 
 void GenerateSLAR(double(*f)(double), int n, double a, double b, matrix& res)
@@ -56,18 +55,15 @@ void CalcDB(double(*f)(double), const vect& vC, vect& vD, vect& vB, vect& vA, in
 void CopyMatrix(matrix& dest, const matrix src, int n)
 {
 	for (int i = 0; i < n; i++)
-	{
 		for (int j = 0; j <= n; j++)
-		{
 			dest[i][j] = src[i][j];
-		}
-	}
 }
 
 bool GaussianElimination(const matrix SLAR, int n, vect& X)
 {
 	matrix a;
 	CopyMatrix(a, SLAR, n);
+
 	for (int k = 0; k < n; k++)
 	{
 		if (a[k, k] == 0)
@@ -75,17 +71,16 @@ bool GaussianElimination(const matrix SLAR, int n, vect& X)
 			cout << "Divide by zero!" << endl;
 			return false;
 		}
+
 		double e = a[k][k];
-		for (int j = k; j <= n; j++) {
+		for (int j = k; j <= n; j++)
 			a[k][j] = a[k][j] / e;
-		}
+
 		for (int i = k + 1; i < n; i++)
 		{
 			e = a[i][k];
 			for (int j = 0; j <= n; j++)
-			{
 				a[i][j] = a[i][j] - a[k][j] * e;
-			}
 		}
 	}
 
@@ -93,9 +88,8 @@ bool GaussianElimination(const matrix SLAR, int n, vect& X)
 	{
 		double sub = 0;
 		for (int j = i + 1; j < n; j++)
-		{
 			sub += a[i][j] * X[j];
-		}
+
 		X[i] = a[i][n] - sub;
 	}
 	return true;
@@ -105,27 +99,18 @@ bool GaussianElimination(const matrix SLAR, int n, vect& X)
 void PrintVect(vect const X, int n)
 {
 	for (int i = 0; i < n; i++)
-	{
 		cout << "X[" << i << "]=" << X[i] << endl;
-	}
 	cout << endl;
 }
 
 void PrintParth(double c, double xi)
 {
-	if (c == 0)
-	{
-		return;
-	}
+	if (c == 0) return;
 
-	if (c < 0)
-	{
+	if (c<0)
 		cout << " - " << 0.0 + abs(c) << "*";
-	}
 	else
-	{
 		cout << " + " << c << "*";
-	}
 
 	if (xi == 0)
 	{
@@ -133,14 +118,10 @@ void PrintParth(double c, double xi)
 	}
 	else
 	{
-		if (xi < 0)
-		{
+		if (xi<0)
 			cout << "(x + " << 0.0 + abs(xi) << ")";
-		}
 		else
-		{
 			cout << "(x - " << xi << ")";
-		}
 	}
 }
 
@@ -149,7 +130,8 @@ void PrintSpline(vect const vA, vect const vB, vect const vC, vect const vD, int
 	for (int i = 1; i <= n; i++)
 	{
 		double xi = a + (i * (b - a)) / n;
-		cout << "s" << i << "(x)=" << vA[i];
+		cout << "s" << i << "(x)=" <<
+			vA[i];
 		PrintParth(vB[i], xi);
 		PrintParth(vC[i] / 2., xi);
 		cout << "^2 ";

@@ -8,9 +8,6 @@
 #define B 8
 #define MAX_SECOND_DERIVATIVE 51.7132
 
-
-
-
 using namespace std;
 
 
@@ -27,7 +24,6 @@ double  g(double t);
 
 
 void getPolynomialNumber(double eps, vector<Point> &points);
-void DrawGraph(HDC hDC, vector<Point> points, int color);
 void PointFunc(vector<Point> &points);
 double integral(double a, double b, int ind1, int ind2);
 double integral1(double a, double b, int ind1);

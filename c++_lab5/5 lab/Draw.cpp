@@ -1,6 +1,5 @@
 #include "Header.h"
 
-
 void DrawGraph(HDC hDC, vector<Point> points, int color)
 {
 	for (int i = 0; i < points.size(); i++)

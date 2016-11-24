@@ -2,7 +2,7 @@
 #include <math.h> 
 double f(double x)
 {
-	return 0.5 * exp(pow(x, 1 / 3)) * sin(3 * x);
+	return 0.5 * exp(pow(x, 1 / 3)) * sin(3 * x);;
 }
 
 double g(double t)
@@ -27,11 +27,6 @@ double phi(int n, double x)
 	return Tn;
 }
 
-double getStep(double eps)
-{
-	return sqrt(12 * eps / ((B - A) * MAX_SECOND_DERIVATIVE));
-}
-
 double **getCoef_K(int n)
 {	
 	double **Arr = new double *[n];
@@ -52,7 +47,7 @@ double* findCoefs(int n)
 	return alpha;
 }
 
-double chebyshevPolynomial(double x, double* alpha, int n)
+double Polynomial(double x, double* alpha, int n)
 {
 
 	double t = (2 * x - (B + A)) / (B - A);
@@ -62,12 +57,10 @@ double chebyshevPolynomial(double x, double* alpha, int n)
 	return y;
 }
 
-
-
 void getPolynomialNumber(double eps, vector<Point> &points)
 {
-	int NumNodes = 500;
-	int k = (B - A) * NumNodes;
+	int NumNodes = 150;
+	int k = 150;
 	double step = (1 / (double)NumNodes);
 	double x, fi, *alpha, sum, tmp, last_squares_approximation;
 	int polynomialPower = 2;
@@ -80,7 +73,7 @@ void getPolynomialNumber(double eps, vector<Point> &points)
 		sum = 0;
 		for (int i = 0; i <= k; ++i)
 		{
-			fi = chebyshevPolynomial(x, alpha, polynomialPower);
+			fi = Polynomial(x, alpha, polynomialPower);
 			tmp = f(x) - fi;
 			sum += tmp * tmp;
 			pt.x = x;
@@ -92,11 +85,11 @@ void getPolynomialNumber(double eps, vector<Point> &points)
 		++polynomialPower;
 
 	} while (last_squares_approximation > eps);
-	cout << endl << "Amount of Chebyshev polynomials: " << polynomialPower << endl;
+	cout << endl << "Amount of polynomials: " << polynomialPower << endl;
 }
 
-void PointFunc(vector<Point> &points)
-{
+void PointFunc(vector<Point> &points) {
+
 	double step = 0.005;
 	double x;
 	Point pt;
