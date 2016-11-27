@@ -2,7 +2,7 @@
 #include <math.h> 
 double f(double x)
 {
-	return 0.5 * exp(pow(x, 1 / 3)) * sin(3 * x);;
+	return x * exp(sin(x / 1.5)) - 20;
 }
 
 double g(double t)

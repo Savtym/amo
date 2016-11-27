@@ -4,8 +4,8 @@
 #include <vector>
 #include <windows.h>
 
-#define A 2
-#define B 8
+#define A 0
+#define B 16
 #define MAX_SECOND_DERIVATIVE 51.7132
 
 using namespace std;

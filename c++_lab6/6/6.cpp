@@ -5,14 +5,14 @@ using namespace std;
 
 #define N 50		
 #define A 0				
-#define B 14
+#define B 16
 
 typedef double matrix[N + 1][N + 2];
 typedef double vect[N + 1];
 
 double F(double x)
 {
-	return x*exp(sin(x / 1.5)) - 20;
+	return x * exp(sin(x / 1.5)) - 20;
 }
 
 void GenerateSLAR(double(*f)(double), int n, double a, double b, matrix& res)
